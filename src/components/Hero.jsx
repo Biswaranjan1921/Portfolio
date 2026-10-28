@@ -32,7 +32,7 @@ export default function Hero({ onOpenResume, darkMode }) {
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-cyan-950/60 dark:bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 backdrop-blur-md shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-spin" style={{ animationDuration: '8s' }} />
-              <span>Final-Year CSE @ BCET Balasore (CGPA 8.5)</span>
+              <span>B.Tech CSE Graduate @ BCET Balasore · CGPA 8.5</span>
             </div>
 
             {/* Main Headline */}
