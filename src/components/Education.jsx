@@ -1,6 +1,6 @@
 import React from 'react';
 import { education } from '../data/portfolioData';
-import { GraduationCap, Calendar, CheckCircle2, Award } from 'lucide-react';
+import { GraduationCap, Calendar } from 'lucide-react';
 
 export default function Education() {
   return (
@@ -16,7 +16,7 @@ export default function Education() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono">
               /academic-education
             </h2>
-            <p className="text-xs text-slate-400 font-mono">Degree, High School & Foundational Education</p>
+            <p className="text-xs text-slate-400 font-mono">Degree, High School &amp; Foundational Education</p>
           </div>
         </div>
 

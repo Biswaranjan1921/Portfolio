@@ -16,7 +16,7 @@ export default function Experience() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono">
               /work-experience
             </h2>
-            <p className="text-xs text-slate-400 font-mono">Research Internship & Technical Roles</p>
+            <p className="text-xs text-slate-400 font-mono">Research Internship &amp; Technical Roles</p>
           </div>
         </div>
 

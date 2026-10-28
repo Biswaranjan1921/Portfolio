@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { projects } from '../data/portfolioData';
-import { FolderGit2, ExternalLink, Github, Layers, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
+import { FolderGit2, ExternalLink, Github, Sparkles, ChevronRight } from 'lucide-react';
 
 export default function Projects({ onSelectProject }) {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Java & Backend', 'ML & Data Science', 'Java & Full Stack'];
+  const categories = ['All', 'Web & React', 'Java & Backend', 'Full Stack Automation'];
 
   const filteredProjects = activeCategory === 'All' 
     ? projects 
-    : projects.filter(p => p.category === activeCategory || p.tech.some(t => t.toLowerCase().includes(activeCategory.toLowerCase().split(' ')[0])));
+    : projects.filter(p => {
+        if (activeCategory === 'Web & React') return p.category.includes('React') || p.tech.includes('React');
+        if (activeCategory === 'Java & Backend') return p.category.includes('Java') || p.tech.includes('Java');
+        if (activeCategory === 'Full Stack Automation') return p.category.includes('Full Stack') || p.tech.includes('Hostel');
+        return true;
+      });
 
   return (
     <section id="projects" className="py-20 relative">
@@ -25,7 +30,7 @@ export default function Projects({ onSelectProject }) {
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono">
                 /featured-projects
               </h2>
-              <p className="text-xs text-slate-400 font-mono">Production Applications, Systems & ML Models</p>
+              <p className="text-xs text-slate-400 font-mono">Production Applications, Systems &amp; ML Models</p>
             </div>
           </div>
 
@@ -48,7 +53,7 @@ export default function Projects({ onSelectProject }) {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
@@ -65,7 +70,7 @@ export default function Projects({ onSelectProject }) {
                   {project.metrics && (
                     <span className="text-[11px] font-mono text-emerald-400 flex items-center gap-1">
                       <Sparkles className="w-3 h-3 text-emerald-400" />
-                      {project.metrics}
+                      {project.metrics.split('·')[0]}
                     </span>
                   )}
                 </div>
@@ -117,7 +122,7 @@ export default function Projects({ onSelectProject }) {
                 </a>
 
                 <button
-                  onClick={() => onSelectProject(project)}
+                  onClick={() => onSelectProject && onSelectProject(project)}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 border border-cyan-500/30 transition-all"
                 >
                   <span>Details</span>

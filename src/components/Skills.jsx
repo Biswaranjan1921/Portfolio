@@ -5,9 +5,9 @@ import { Cpu, Code2, Database, ShieldCheck, Wrench, CheckCircle } from 'lucide-r
 export default function Skills() {
   const categoryIcons = {
     "Languages & Core": Code2,
-    "Backend & Databases": Database,
-    "Testing, Quality & DevOps": ShieldCheck,
-    "IDEs & Developer Tools": Wrench
+    "Web & Backend": Database,
+    "Build Tools, Testing & Quality": ShieldCheck,
+    "CI/CD, Tools & IDEs": Wrench
   };
 
   return (
@@ -23,7 +23,7 @@ export default function Skills() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono">
               /technical-skills
             </h2>
-            <p className="text-xs text-slate-400 font-mono">Languages, Frameworks, DBs & Build Tools</p>
+            <p className="text-xs text-slate-400 font-mono">Languages, Frameworks, DBs &amp; Build Tools</p>
           </div>
         </div>
 

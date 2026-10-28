@@ -7,7 +7,7 @@ export default function About() {
     "Expertise in Java (OOP, Collections, Multithreading, Exception Handling)",
     "Backend engineering with Spring Boot, REST APIs, JDBC & Oracle Database",
     "Hands-on ML Research experience at DRDO Balasore (+18% accuracy boost)",
-    "4x Hackathon Winner (BPUT Tech Carnival, IIT Bhubaneswar Robot Race 1st place)",
+    "5x Hackathon Winner (BPUT Hackathon, BPUT Tech Carnival, IIT Bhubaneswar)",
     "Clean code practices with SonarQube, JUnit/Mockito testing, & ELK logging",
     "Strong foundation in Data Structures, Algorithms & Database Systems"
   ];
@@ -25,7 +25,7 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono">
               /about-me
             </h2>
-            <p className="text-xs text-slate-400 font-mono">Background, Philosophy & Core Strengths</p>
+            <p className="text-xs text-slate-400 font-mono">Background, Philosophy &amp; Core Strengths</p>
           </div>
         </div>
 
@@ -35,7 +35,7 @@ export default function About() {
           <div className="lg:col-span-7 space-y-6 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800">
             <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
               <Flame className="w-5 h-5 text-amber-400" />
-              <span>Passionate Java Developer & Backend Architect</span>
+              <span>Passionate Java Developer &amp; Software Developer</span>
             </h3>
 
             {personalDetails.bio.map((paragraph, i) => (
@@ -46,7 +46,7 @@ export default function About() {
 
             <div className="pt-4 border-t border-slate-800">
               <h4 className="text-xs font-mono uppercase text-cyan-400 tracking-wider mb-3">
-                Key Strengths & Competencies
+                Key Strengths &amp; Competencies
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {highlights.map((item, idx) => (
@@ -112,7 +112,7 @@ export default function About() {
                 DRDO Rainfall Prediction System ('DROP')
               </h5>
               <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                Applied regression ML models to over 10,000 meteorological records at DRDO PXE Balasore, improving prediction accuracy by <strong>18%</strong>.
+                Applied regression ML models to over 10,000 meteorological records at DRDO Balasore, improving prediction accuracy by <strong>18%</strong>.
               </p>
             </div>
 

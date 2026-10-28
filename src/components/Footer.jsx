@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { personalDetails } from '../data/portfolioData';
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
                 Biswaranjan Panda
               </p>
               <p className="text-[11px] text-slate-500 font-mono">
-                Java Developer &amp; Backend Specialist
+                Java Developer / Software Developer
               </p>
             </div>
           </div>

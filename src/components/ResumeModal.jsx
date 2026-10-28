@@ -1,6 +1,6 @@
 import React from 'react';
-import { X, Printer, Download, Mail, Phone, MapPin, Award, CheckCircle2 } from 'lucide-react';
-import { personalDetails, experiences, projects, education, achievements } from '../data/portfolioData';
+import { X, Printer } from 'lucide-react';
+import { personalDetails } from '../data/portfolioData';
 
 export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -26,14 +26,14 @@ export default function ResumeModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center gap-1.5 border border-slate-700"
+              className="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center gap-1.5 border border-slate-700 transition-colors"
             >
               <Printer className="w-3.5 h-3.5 text-cyan-400" />
               <span>Print / Save PDF</span>
             </button>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white"
+              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -49,15 +49,15 @@ export default function ResumeModal({ isOpen, onClose }) {
               BISWARANJAN PANDA
             </h1>
             <p className="text-sm font-semibold text-cyan-400 print:text-blue-600 font-mono">
-              Java Developer | Software Engineer
+              Java Developer / Software Developer
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 print:text-slate-700 font-mono pt-1">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400 print:text-slate-700 font-mono pt-1">
               <span>+91-9861944502</span>
-              <span>•</span>
-              <span>biswaranjanpanda101@gmail.com</span>
-              <span>•</span>
+              <span>|</span>
+              <a href="mailto:biswaranjanpanda101@gmail.com" className="hover:underline">biswaranjanpanda101@gmail.com</a>
+              <span>|</span>
               <a href={personalDetails.linkedin} target="_blank" rel="noreferrer" className="hover:underline">linkedin.com/in/biswaranjanpanda</a>
-              <span>•</span>
+              <span>|</span>
               <a href={personalDetails.github} target="_blank" rel="noreferrer" className="hover:underline">github.com/Biswaranjan1921</a>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               SUMMARY
             </h2>
             <p className="text-slate-300 print:text-slate-800 text-xs leading-relaxed">
-              Final-year Computer Science student (CGPA 8.5) with strong skills in Java, Spring Boot, REST APIs, JDBC, Oracle DB, and Firebase. Built 5+ end-to-end projects, improving ML accuracy by 18% and reducing processing time by 25%. Proficient in OOP, DSA, and scalable backend development, with multiple hackathon wins and a focus on delivering high-impact solutions.
+              {personalDetails.summary}
             </p>
           </div>
 
@@ -78,54 +78,89 @@ export default function ResumeModal({ isOpen, onClose }) {
               TECHNICAL SKILLS
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs text-slate-300 print:text-slate-800">
-              <div><strong className="text-slate-100 print:text-black font-mono">Languages:</strong> Java (OOP, Collections, Multithreading), SQL, Python</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Language:</strong> Java (OOP, Collections, Multithreading, Exception Handling), SQL</div>
               <div><strong className="text-slate-100 print:text-black font-mono">Web:</strong> HTML5, CSS3, JavaScript</div>
-              <div><strong className="text-slate-100 print:text-black font-mono">Databases:</strong> Oracle DB, Firebase Realtime DB / Firestore</div>
-              <div><strong className="text-slate-100 print:text-black font-mono">Backend:</strong> Spring Boot, REST APIs, JDBC</div>
-              <div><strong className="text-slate-100 print:text-black font-mono">Build &amp; Quality:</strong> JUnit, Mockito, JMeter, SonarQube</div>
-              <div><strong className="text-slate-100 print:text-black font-mono">Logging/Tools:</strong> SLF4J, ELK Stack, Git, GitHub, Postman</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Database:</strong> Oracle DB, Firebase Realtime DB / Firestore</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Backend:</strong> Spring Boot</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Build Tools:</strong> Maven, Gradle, JUnit, Mockito, JMeter</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Logging &amp; Monitoring:</strong> SLF4J, ELK Stack</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Code Quality:</strong> SonarQube</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">Tools:</strong> Git, GitHub, Postman</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">CI &amp; CD Tools:</strong> Jenkins, Docker</div>
+              <div><strong className="text-slate-100 print:text-black font-mono">IDE:</strong> VS Code, Eclipse, STS</div>
             </div>
           </div>
 
           {/* Experience */}
           <div>
             <h2 className="text-xs font-mono font-bold uppercase text-cyan-400 print:text-blue-600 tracking-wider mb-2 border-b border-slate-800 print:border-slate-300 pb-1">
-              WORK EXPERIENCE
+              EXPERIENCE
             </h2>
-            {experiences.map((exp) => (
-              <div key={exp.id} className="space-y-1">
-                <div className="flex justify-between items-baseline font-mono text-xs">
-                  <strong className="text-slate-100 print:text-black text-sm">{exp.role} — {exp.company}</strong>
-                  <span className="text-slate-400 print:text-slate-600">{exp.period}</span>
-                </div>
-                <ul className="list-disc list-inside text-xs text-slate-300 print:text-slate-800 space-y-1 pt-1">
-                  {exp.highlights.map((h, i) => (
-                    <li key={i}>{h}</li>
-                  ))}
-                </ul>
+            <div className="space-y-2">
+              <div className="flex justify-between items-baseline font-mono text-xs">
+                <strong className="text-slate-100 print:text-black text-sm">Research Intern — DRDO, Balasore</strong>
+                <span className="text-slate-400 print:text-slate-600">May 2025 – Jun 2025</span>
               </div>
-            ))}
+              <ul className="list-disc list-inside text-xs text-slate-300 print:text-slate-800 space-y-1 pl-1">
+                <li>Built a rainfall prediction system using regression ML models; improved forecast accuracy by 18%.</li>
+              </ul>
+            </div>
           </div>
 
           {/* Projects */}
           <div>
             <h2 className="text-xs font-mono font-bold uppercase text-cyan-400 print:text-blue-600 tracking-wider mb-2 border-b border-slate-800 print:border-slate-300 pb-1">
-              KEY PROJECTS
+              PROJECTS
             </h2>
             <div className="space-y-3 text-xs">
-              {projects.map((proj) => (
-                <div key={proj.id} className="space-y-1">
-                  <div className="flex justify-between items-baseline font-mono">
-                    <strong className="text-slate-100 print:text-black text-sm">{proj.title}</strong>
-                    <span className="text-cyan-400 print:text-blue-600 text-[11px]">{proj.tech.slice(0, 4).join(' · ')}</span>
-                  </div>
-                  <ul className="list-disc list-inside text-slate-300 print:text-slate-800 space-y-0.5">
-                    {proj.details.map((d, i) => (
-                      <li key={i}>{d}</li>
-                    ))}
-                  </ul>
+              
+              {/* Project 1 */}
+              <div className="space-y-1">
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold text-slate-100 print:text-black text-sm">
+                    DROP — Rainfall Prediction System
+                  </span>
+                  <span className="text-cyan-400 print:text-blue-600 text-[11px] font-mono">
+                    Web Development · React · HTML · CSS · JavaScript
+                  </span>
                 </div>
-              ))}
+                <ul className="list-disc list-inside text-slate-300 print:text-slate-800 space-y-0.5 pl-1">
+                  <li>Developed an interactive React dashboard for visualising rainfall data and ML predictions, supporting analysis of 10,000+ data points with 85% prediction accuracy.</li>
+                </ul>
+              </div>
+
+              {/* Project 2 */}
+              <div className="space-y-1">
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold text-slate-100 print:text-black text-sm">
+                    Student Result Management System
+                  </span>
+                  <span className="text-cyan-400 print:text-blue-600 text-[11px] font-mono">
+                    Java · JDBC · Oracle SQL · HTML/CSS
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-slate-300 print:text-slate-800 space-y-0.5 pl-1">
+                  <li>Full CRUD web app for student records, courses, and grades — role-based login (Admin/Student).</li>
+                  <li>Oracle DB backend via JDBC; HTML/CSS frontend with session-based authentication.</li>
+                </ul>
+              </div>
+
+              {/* Project 3 */}
+              <div className="space-y-1">
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold text-slate-100 print:text-black text-sm">
+                    Smart Hostel Management System
+                  </span>
+                  <span className="text-cyan-400 print:text-blue-600 text-[11px] font-mono">
+                    Java · HTML · CSS
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-slate-300 print:text-slate-800 space-y-0.5 pl-1">
+                  <li>Web-based automation system for hostel operations: room allocation, fee payment, attendance, complaints, and visitor management.</li>
+                  <li>QR-based meal verification; streamlined administrative processes and improved student–Warden communication through a centralised platform.</li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
@@ -134,31 +169,55 @@ export default function ResumeModal({ isOpen, onClose }) {
             <h2 className="text-xs font-mono font-bold uppercase text-cyan-400 print:text-blue-600 tracking-wider mb-2 border-b border-slate-800 print:border-slate-300 pb-1">
               EDUCATION
             </h2>
-            <div className="space-y-1.5 text-xs font-mono">
-              {education.map((edu, i) => (
-                <div key={i} className="flex justify-between items-center text-slate-300 print:text-slate-800">
-                  <div>
-                    <strong className="text-slate-100 print:text-black">{edu.degree}</strong> — {edu.institution}
-                  </div>
-                  <div className="text-cyan-300 print:text-blue-600 font-bold">
-                    {edu.grade} | {edu.period}
-                  </div>
+            <div className="space-y-2 text-xs font-mono">
+              <div className="flex justify-between items-center text-slate-300 print:text-slate-800 border-b border-slate-800/40 pb-1">
+                <div>
+                  <strong className="text-slate-100 print:text-black">B.Tech in CSE</strong> — BCET Balasore (BPUT)
                 </div>
-              ))}
+                <div className="text-cyan-300 print:text-blue-600 font-bold">
+                  2022 – 2026 | CGPA: 8.5 / 10
+                </div>
+              </div>
+              <div className="flex justify-between items-center text-slate-300 print:text-slate-800 border-b border-slate-800/40 pb-1">
+                <div>
+                  <strong className="text-slate-100 print:text-black">Higher Secondary (+2 Science)</strong> — CHSE Odisha
+                </div>
+                <div className="text-cyan-300 print:text-blue-600 font-bold">
+                  2020 – 2022 | 83.56%
+                </div>
+              </div>
+              <div className="flex justify-between items-center text-slate-300 print:text-slate-800">
+                <div>
+                  <strong className="text-slate-100 print:text-black">Matriculation (10th)</strong> — BSE Odisha
+                </div>
+                <div className="text-cyan-300 print:text-blue-600 font-bold">
+                  2018 – 2020 | 81.65%
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Achievements */}
+          {/* Certifications & Achievements */}
           <div>
             <h2 className="text-xs font-mono font-bold uppercase text-cyan-400 print:text-blue-600 tracking-wider mb-2 border-b border-slate-800 print:border-slate-300 pb-1">
               CERTIFICATIONS &amp; ACHIEVEMENTS
             </h2>
-            <ul className="list-disc list-inside text-xs text-slate-300 print:text-slate-800 space-y-1">
-              {achievements.map((item) => (
-                <li key={item.id}>
-                  <strong className="text-slate-100 print:text-black font-mono">{item.title}:</strong> {item.description}
-                </li>
-              ))}
+            <ul className="list-disc list-inside text-xs text-slate-300 print:text-slate-800 space-y-1.5 pl-1">
+              <li>
+                <strong className="text-slate-100 print:text-black font-mono">1st Place — Line Following Robot, IIT Bhubaneswar</strong>
+              </li>
+              <li>
+                <strong className="text-slate-100 print:text-black font-mono">IoT Specialist — NIT Rourkela:</strong> Built IoT solutions using sensors and automation.
+              </li>
+              <li>
+                <strong className="text-slate-100 print:text-black font-mono">Winner — BPUT Hackathon 2025:</strong> Led a scalable solution, demonstrating strong problem-solving and rapid prototyping skills.
+              </li>
+              <li>
+                <strong className="text-slate-100 print:text-black font-mono">Winner — InspraNo Hackathon, GCEK:</strong> Developed and delivered an innovative real-world solution under tight deadlines, demonstrating strong teamwork and technical expertise.
+              </li>
+              <li>
+                <strong className="text-slate-100 print:text-black font-mono">Winner — BPUT Tech Carnival 2025–26:</strong> Secured top position by developing an innovative, high-impact solution under competitive conditions.
+              </li>
             </ul>
           </div>
 

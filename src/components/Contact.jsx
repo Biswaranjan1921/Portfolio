@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { personalDetails } from '../data/portfolioData';
-import { Mail, Phone, MapPin, Send, Copy, Check, Github, Linkedin, MessageSquare, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Copy, Check, Github, Linkedin, MessageSquare } from 'lucide-react';
 
 export default function Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -115,7 +115,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Social Buttons */}
+              {/* Social Quick Links */}
               <div className="pt-2 flex items-center gap-3">
                 <a
                   href={personalDetails.github}

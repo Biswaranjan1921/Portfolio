@@ -1,6 +1,6 @@
 import React from 'react';
 import { achievements } from '../data/portfolioData';
-import { Trophy, Award, Sparkles, Star, ShieldCheck, Flag } from 'lucide-react';
+import { Trophy, Flag } from 'lucide-react';
 
 export default function Achievements() {
   return (
@@ -16,7 +16,7 @@ export default function Achievements() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono">
               /achievements-&amp;-awards
             </h2>
-            <p className="text-xs text-slate-400 font-mono">Hackathon Championships & Robotics Titles</p>
+            <p className="text-xs text-slate-400 font-mono">Hackathon Championships &amp; Robotics Titles</p>
           </div>
         </div>
 

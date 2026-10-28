@@ -37,20 +37,20 @@ export default function Hero({ onOpenResume, darkMode }) {
 
             {/* Main Headline */}
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
                 Hi, I'm <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                   {personalDetails.name}
                 </span>
               </h1>
               <p className="mt-4 text-xl sm:text-2xl font-semibold text-slate-300 font-mono flex items-center gap-2">
-                <span className="text-cyan-400">&gt;</span> Java Developer & Backend Specialist
+                <span className="text-cyan-400">&gt;</span> Java Developer / Software Developer
               </p>
             </div>
 
             {/* Tagline / Pitch */}
             <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-              Building robust <span className="text-slate-200 font-medium">Spring Boot enterprise services</span>, <span className="text-slate-200 font-medium">Oracle DB architectures</span>, and <span className="text-slate-200 font-medium">applied ML systems</span>. Research Intern at <strong className="text-cyan-400">DRDO Balasore</strong> & 4x Hackathon Winner.
+              Building robust <span className="text-slate-200 font-medium">Spring Boot enterprise services</span>, <span className="text-slate-200 font-medium">Oracle DB architectures</span>, and <span className="text-slate-200 font-medium">applied ML systems</span>. Research Intern at <strong className="text-cyan-400">DRDO Balasore</strong> &amp; 5x Hackathon &amp; Robotics Winner.
             </p>
 
             {/* Action Buttons */}
@@ -136,7 +136,7 @@ export default function Hero({ onOpenResume, darkMode }) {
 <span className="text-purple-400">@Service</span>{'\n'}
 <span className="text-purple-400">@Transactional</span>{'\n'}
 <span className="text-blue-400">public class</span> <span className="text-cyan-300">DeveloperService</span> &#123;{'\n\n'}
-{'  '}<span className="text-slate-500">// DRDO Research & Hackathon Winner</span>{'\n'}
+{'  '}<span className="text-slate-500">// DRDO Research & 5x Hackathon Winner</span>{'\n'}
 {'  '}<span className="text-blue-400">private final</span> String engineer = <span className="text-emerald-300">"Biswaranjan Panda"</span>;{'\n'}
 {'  '}<span className="text-blue-400">private final</span> double cgpa = <span className="text-amber-300">8.5</span>;{'\n\n'}
 {'  '}<span className="text-purple-400">@Autowired</span>{'\n'}
@@ -146,7 +146,7 @@ export default function Hero({ onOpenResume, darkMode }) {
 {'      '}.framework(<span className="text-emerald-300">"Spring Boot / REST APIs"</span>){'\n'}
 {'      '}.database(<span className="text-emerald-300">"Oracle DB, Firebase"</span>){'\n'}
 {'      '}.researchInternship(<span className="text-emerald-300">"DRDO Balasore"</span>){'\n'}
-{'      '}.hackathonWins(<span className="text-amber-300">4</span>){'\n'}
+{'      '}.hackathonWins(<span className="text-amber-300">5</span>){'\n'}
 {'      '}.build();{'\n'}
 {'  '}&#125;{'\n'}
 &#125;
